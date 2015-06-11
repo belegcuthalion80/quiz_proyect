@@ -2,3 +2,8 @@
 <% var i; for (i=0; i<quizes.length;i++){
 	%><tr><td><a href="quizes/<%= quizes[i].id%>"><%=quizes[i].pregunta%></a></td></tr>
 	<%}%></table>
+<form method="GET" action="/quizes/">
+	<p>Introduce el texto de la pregunta a buscar<p>
+	<input type="text" name="search" value="Buscar" />
+	<input type="submit" value="Enviar"></p>
+</form>
