@@ -1,17 +1,29 @@
 <table>
+<tr><td>Pregunta</td><td>Editar</td><td>Borrar</td><td>Tema</td></tr>
 <% var i; for (i=0; i<quizes.length;i++){
-	%><tr><td><a href="/quizes/<%= quizes[i].id%>"><%=quizes[i].pregunta%></a></td>
+	%><p><tr><td><a href="/quizes/<%= quizes[i].id%>"><%=quizes[i].pregunta%></a></td>
 	<td><a href="/quizes/<%= quizes[i].id%>/edit"><button type="button">Editar Pregunta</button></a>
 	</td>
 	<td><form method="post" action="quizes/<%=quizes[i].id%>?_method=delete"><button type="submit" onclick="return confirm('Borrar: <%=quizes[i].pregunta%>');">Borrar</button>
 	</form>
 	</td>
-	</tr>
+	<td><%=quizes[i].tema%></td>
+	</tr></p>
 	<%}%></table>
 <form method="GET" action="/quizes/">
 	<p>Introduce el texto de la pregunta a buscar<p>
 	<input type="text" name="search" value="Buscar" />
+	<p>Selecciona la opcion para elegir tema</p>
+ 	<p><select name="tema">
+  		<option value="otro" selected>Otro</option>
+  		<option value="humanidades">Humanidades</option>
+  		<option value="ocio">Ocio</option>
+  		<option value="ciencia">Ciencia</option>
+  		<option value="tecnologia">Tecnología</option>
+	</select>
+	</p>
+	<p>
 	<input type="submit" value="Enviar"></p>
 </form>
-<p>
+
 <a href="/quizes/new"><button type="button">Crear pregunta</button></a></p>

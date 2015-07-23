@@ -3,5 +3,15 @@
 <input type="text" id="preg" name="quiz[pregunta]" value="<%=quiz.pregunta%>"/></p><p>
 <label for="preg" class="rem">Respuesta:</label>
 <input type="text" id="preg" name="quiz[respuesta]" value="<%=quiz.respuesta%>"/><p>
+<p>Selecciona la opcion para elegir tema</p>
+ 	<p><select name="quiz[tema]">
+  		<option value="otro" selected>Otro</option>
+  		<option value="humanidades">Humanidades</option>
+  		<option value="ocio">Ocio</option>
+  		<option value="ciencia">Ciencia</option>
+  		<option value="tecnologia">Tecnología</option>
+	</select>
+	</p>
+	<p>
 <a href="/quizes"><button type="button">Cancelar</button></a>
 <input type="submit" value="Salvar">
